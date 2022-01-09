@@ -1,0 +1,23 @@
+{
+  "name": "@sellix/node-sdk",
+  "version": "1.0.0",
+  "description": "Sellix NodeJS SDK",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "DEBUG=SellixApiClient node tests/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sellix/node-sdk.git"
+  },
+  "author": "Daniele Servadei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sellix/node-sdk/issues"
+  },
+  "homepage": "https://github.com/Sellix/node-sdk#readme",
+  "dependencies": {
+    "debug": "^4.3.3",
+    "node-fetch": "2"
+  }
+}
