@@ -24,9 +24,9 @@ npm i @sellix/node-sdk
 // pass <MERCHANT_NAME> only if you need to be authenticated as an additional store
 const sellix = require("@sellix/node-sdk")("<YOUR_API_KEY>", "<MERCHANT_NAME>")
 
-void (await () => {
+void (async () => {
   try {
-    const products = sellix.products.list();
+    const products = await sellix.products.list()
   } catch (e) {
     console.log(e)
   }
