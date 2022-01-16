@@ -176,6 +176,48 @@ void (async () => {
       await sellix.payments.delete(paymentWhiteLabel.uniqid)
       debug("  Delete payment white label passed ✓")
     }
+
+    if (!tests.length || tests.includes("customers")) {
+      debug("Testing customers")
+      const customerPayload = {
+        "email": "sampleJames@gmail.com",
+        "name": "James",
+        "surname": "Smith",
+        "phone": "3287261000",
+        "phone_country_code": "IT",
+        "country_code": "IT",
+        "street_address": "St. Rome 404",
+        "additional_address_info": null,
+        "city": "Rome",
+        "postal_code": "0",
+        "state": "Italy"
+      }
+      const customerId = await sellix.customers.create(customerPayload)
+      debug("  Create customer passed ✓")
+      await sellix.customers.get(customerId)
+      debug("  Get customer passed ✓")
+      await sellix.customers.list()
+      debug("  List customers passed ✓")
+      await sellix.customers.update(customerId, customerPayload)
+      debug("  Update customer passed ✓")
+    }
+    
+    if (!tests.length || tests.includes("subscriptions")) {
+      debug("Testing subscriptions")
+      const subscriptionPayload = {
+        "product_id": "61a8de6277597",
+        "coupon_code": null,
+        "custom_fields": {
+          "user_id": "demo"
+        },
+        "customer_id": "cst_9f006addc898a645",
+        "gateway": null
+      }
+      await sellix.subscriptions.create(subscriptionPayload)
+      debug("  Create subscription passed ✓")
+      await sellix.subscriptions.list()
+      debug("  List subscriptions passed ✓")
+    }
   } catch (e) {
     debug(e)
   }

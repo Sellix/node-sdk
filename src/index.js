@@ -10,7 +10,9 @@ module.exports = (apiKey, merchant = null) => {
     "Orders",
     "Products",
     "Queries",
-    "Payments"
+    "Payments",
+    "Customers",
+    "Subscriptions"
   ].forEach(component => {
     e[component.toLowerCase()] = require(`./${component}.js`)(apiKey, merchant)
   })
