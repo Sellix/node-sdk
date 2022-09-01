@@ -175,6 +175,8 @@ void (async () => {
       debug("  Delete payment no white label passed ✓")
       await sellix.payments.delete(paymentWhiteLabel.uniqid)
       debug("  Delete payment white label passed ✓")
+      await sellix.payments.complete(paymentWhiteLabel.uniqid)
+      debug("  Complete payment white label passed ✓")
     }
 
     if (!tests.length || tests.includes("customers")) {

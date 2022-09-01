@@ -18,6 +18,15 @@ module.exports = (apiKey, merchant) => {
     })
   }
 
+  e.complete = async (id) => {
+    return request({
+      apiKey,
+      merchant,
+      endpoint: `${_base}/${id}`,
+      method: "PUT"
+    })
+  }
+
   e.delete = async (id) => {
     return request({
       apiKey,
