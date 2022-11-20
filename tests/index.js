@@ -63,6 +63,26 @@ void (async () => {
       debug("  Delete category passed ✓")
     }
 
+    if (!tests.length || tests.includes("groups")) {
+      debug("Testing groups")
+      const groupPayload = {
+        title: "Software Group",
+        unlisted: false,
+        products_bound: [],
+        sort_priority: 0
+      }
+      const groupId = await sellix.groups.create(groupPayload)
+      debug("  Create group passed ✓")
+      await sellix.groups.get(groupId)
+      debug("  Get group passed ✓")
+      await sellix.groups.list()
+      debug("  List groups passed ✓")
+      await sellix.groups.update(groupId, groupPayload)
+      debug("  Update group passed ✓")
+      await sellix.groups.delete(groupId)
+      debug("  Delete group passed ✓")
+    }
+
     if (!tests.length || tests.includes("coupons")) {
       debug("Testing coupons")
       const couponPayload = {
