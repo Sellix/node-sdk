@@ -9,6 +9,7 @@ module.exports = (apiKey, merchant = null) => {
     "Feedback",
     "Orders",
     "Products",
+    "Groups",
     "Queries",
     "Payments",
     "Customers",
