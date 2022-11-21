@@ -128,6 +128,16 @@ void (async () => {
         const { uniqid: orderId } = ordersList[0]
         await sellix.orders.get(orderId)
         debug("  Get order passed ✓")
+        await sellix.orders.update(orderId, {
+          gateway: "STRIPE",
+          stripe_apm: "ideal"
+        })
+        debug("  Update order passed ✓")
+        await sellix.orders.issue_replacement(orderId, {
+          quantity: 1,
+          prouct_id: "demo"
+        })
+        debug("  Issue order replacement passed ✓")
       }
     }
 

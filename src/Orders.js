@@ -23,5 +23,26 @@ module.exports = (apiKey, merchant) => {
     })
   }
 
+  e.update = async (id, body) => {
+    return request({
+      apiKey,
+      merchant,
+      endpoint: `${_base}/update/${id}`,
+      method: "PUT",
+      key: "invoice",
+      body
+    })
+  }
+
+  e.issue_replacement = async (id, body) => {
+    return request({
+      apiKey,
+      merchant,
+      endpoint: `${_base}/replacement/${id}`,
+      method: "POST",
+      body
+    })
+  }
+
   return e
 }
