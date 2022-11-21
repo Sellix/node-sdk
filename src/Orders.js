@@ -29,7 +29,7 @@ module.exports = (apiKey, merchant) => {
       merchant,
       endpoint: `${_base}/update/${id}`,
       method: "PUT",
-      key: "invoice",
+      key: "order",
       body
     })
   }
