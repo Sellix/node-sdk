@@ -164,6 +164,12 @@ void (async () => {
       debug("  Update product passed ✓")
       await sellix.products.delete(productId)
       debug("  Delete product passed ✓")
+      await sellix.products.licensing.check({
+        key: "activation-key-#1",
+        product_id: "demo",
+        hardware_id: "example-id"
+      })
+      debug("  License check passed ✓")
     }
 
     if (!tests.length || tests.includes("queries")) {

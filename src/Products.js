@@ -53,5 +53,18 @@ module.exports = (apiKey, merchant) => {
     })
   }
 
+  e.licensing = {
+    check: async (body) => {
+      return request({
+        apiKey,
+        merchant,
+        endpoint:`${_base}/licensing/check`,
+        method: "POST",
+        key: "license",
+        body
+      })
+    }
+  }
+
   return e
 }
