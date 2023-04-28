@@ -1,6 +1,8 @@
 # Sellix NodeJS SDK 
 
 ![node-sdk-tag](https://img.shields.io/github/v/tag/sellix/node-sdk?sort=date&color=blueviolet)
+![npm](https://img.shields.io/npm/v/@sellix/node-sdk)
+![downloads](https://img.shields.io/npm/dt/@sellix/node-sdk)
 
 ## Introduction
 
