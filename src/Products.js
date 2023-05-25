@@ -66,5 +66,18 @@ module.exports = (apiKey, merchant) => {
     }
   }
 
+  e.licensing = {
+    update_hardware_id: async (body) => {
+      return request({
+        apiKey,
+        merchant,
+        endpoint:`${_base}/licensing/hardware_id`,
+        method: "PUT",
+        key: "license",
+        body
+      })
+    }
+  }
+
   return e
 }
