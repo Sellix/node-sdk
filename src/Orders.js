@@ -44,5 +44,15 @@ module.exports = (apiKey, merchant) => {
     })
   }
 
+  e.update_custom_fields = async (id, body) => {
+    return request({
+      apiKey,
+      merchant,
+      endpoint: `${_base}/${id}/custom_fields`,
+      method: "PUT",
+      body
+    })
+  }
+
   return e
 }

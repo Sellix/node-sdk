@@ -138,6 +138,12 @@ void (async () => {
           prouct_id: "demo"
         })
         debug("  Issue order replacement passed ✓")
+        await sellix.orders.update_custom_fields(orderId, {
+          custom_fields: {
+            user_id: "demo"
+          }
+        })
+        debug("  Update order custom fields passed ✓")
       }
     }
 
