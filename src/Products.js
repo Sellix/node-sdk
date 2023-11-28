@@ -58,20 +58,18 @@ module.exports = (apiKey, merchant) => {
       return request({
         apiKey,
         merchant,
-        endpoint:`${_base}/licensing/check`,
+        endpoint: `${_base}/licensing/check`,
         method: "POST",
         key: "license",
         body
       })
-    }
-  }
+    },
 
-  e.licensing = {
     update_hardware_id: async (body) => {
       return request({
         apiKey,
         merchant,
-        endpoint:`${_base}/licensing/hardware_id`,
+        endpoint: `${_base}/licensing/hardware_id`,
         method: "PUT",
         key: "license",
         body
