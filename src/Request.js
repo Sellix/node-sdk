@@ -38,7 +38,11 @@ const _handleResponse = ({
   key
 }) => {
   if (response.status !== 200) {
-    throw new Error(`${response.error}: ${JSON.stringify(response)}`)
+    if (response.error) {
+      throw new Error(response.error)
+    }
+
+    throw new Error(JSON.stringify(response))
   } else {
     if (key === null) {
       return null
