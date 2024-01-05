@@ -14,12 +14,12 @@ module.exports = (apiKey, merchant) => {
     })
   }
 
-  e.list = async () => {
+  e.list = async (page = null) => {
     return request({
       apiKey,
       merchant,
       endpoint: _base,
-      key: "orders"
+      key: page ? `orders?page=${page}` : "orders",
     })
   }
 
